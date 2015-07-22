@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="ddApp">
+<head>
+<title>VideoReducer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="bower_components/ngdialog/css/ngdialog.css" rel="stylesheet" type="text/css" />
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="bower_components/sweetalert/lib/sweet-alert.css" rel="stylesheet" type="text/css"/>
+    <link href="bower_components/angular-tooltips/src/css/angular-tooltips.css" rel="stylesheet" type="text/css"/>
+
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+
+    <script src="bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
+    <script src="bower_components/angularjs/angular.js" type="text/javascript"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
+
+    <script src="bower_components/pretty-bytes/pretty-bytes.js" type="text/javascript"></script>
+
+    <script src="bower_components/sweetalert/lib/sweet-alert.min.js" type="text/javascript"></script>
+
+    <script src="bower_components/angular-progress-arc/angular-progress-arc.js" type="text/javascript"></script>
+
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js" type="text/javascript"></script>
+    <script src="bower_components/angular-tooltips/src/js/angular-tooltips.js" type="text/javascript"></script>
+    <script src="bower_components/ngDialog/js/ngDialog.js" type="text/javascript"></script>
+
+    <script src="ng/ng_app.js" type="text/javascript"></script>
+
+    <script src="ng/controllers/HomeCtrl.js" type="text/javascript"></script>
+    <script src="ng/controllers/SettingsCtrl.js" type="text/javascript"></script>
+
+    <script src="ng/services/FolderService.js" type="text/javascript"></script>
+    <script src="ng/services/ffmpegService.js" type="text/javascript"></script>
+
+    <script src="ng/directives/dragDropFiles.js" type="text/javascript"></script>
+</head>
+
+<body drag-drop-files>
+    <div class="full-height" ui-view="content"></div>
+</body>
+
+</html>

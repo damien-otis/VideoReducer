@@ -1,0 +1,30 @@
+<div style="height:24px;">
+    <span class="area_title" style="vertical-align:middle;display:inline-block;margin-top:12px;">Folder Watcher Settings</span>
+    <a ui-sref="home" class="btn btn-default" style="float:right;vertical-align:middle;"><img src="images/goback.png" title="Go Back" style="width:24px;"/></a>
+</div>
+
+<hr/>
+
+<div>
+    <div class="area_title">Filetypes</div>
+    <input type="text" ng-model="filetypes" style="padding: 10px;border-radius: 5px;border: 2px solid black;width: 80%;min-width: 100px;" />
+</div>
+
+<br/>
+
+<div>
+    <div class="area_title">Compression Profile</div>
+    <input type="text" ng-model="ffmpegService.compression_profile" style="padding: 10px;border-radius: 5px;border: 2px solid black;width: 80%;min-width: 100px;" />
+</div>
+
+<br/>
+
+<div ng-cloak>
+    <hr/>
+    <div class="area_title">Exceptions: {{folderService.encoding_exceptions.length}}</div>
+    <select id="file_exceptions" multiple class="form-control">
+        <option ng-repeat="path in folderService.encoding_exceptions">
+            {{path}}
+        </option>
+    </select>
+</div>

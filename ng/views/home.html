@@ -1,0 +1,80 @@
+<div id="HOME">
+
+    <div style="height:24px;">
+        <span class="area_title" style="vertical-align:middle;display:inline-block;margin-top:12px;">Folder Watcher</span>
+        <a ui-sref="settings" class="btn btn-default" style="float:right;vertical-align:middle;"><img src="images/settings.png" title="Settings..." style="width:24px;"/></a>
+    </div>
+
+    <hr style="clear:both;"/>
+
+    <div ng-class="{'hidden': (folderService.hasWatching === true || folderService.hasWatching === undefined) }" ng-cloak class="area_title" style="text-align:center;font-size:30px;">Drag and Drop folders</div>
+
+    <div ng-class="{'hidden': (folderService.hasWatching === false  || folderService.hasWatching === undefined) }" ng-cloak class="area_title">Watching Folders: </div>
+
+    <ul id="watchfolders">
+
+		<li ng-repeat="(watchfolder,watchdata) in folderService.watching">
+
+            <div style="float:left">
+                <div>Folder: {{watchfolder}}</div>
+                <div>Free: {{watchdata.disk.free_size}} / {{watchdata.disk.total_size}}</div>
+                <div>Files: {{watchdata.filecount}}</div>
+            </div>
+
+            <input type="button" value="X" ng-click="removeWatch(watchfolder)" style="float:right" class="btn btn-warning btn-md" title="Delete"/>
+
+            <div style="float:right;padding:4px;border:1px solid #cacaca;border-radius:4px;margin-left:2px;margin-right:2px;background-color:#eaeaea;">
+                <label>PRIORITY</label>
+                <input type="text" filter-integer class="form-control" ng-change="updatePriority(watchdata)" ng-model="watchdata.priority" style="width:50px;border-radius:4px;padding:4px;"/>
+            </div>
+
+            <div style="float:right;padding:4px;border:1px solid #cacaca;border-radius:4px;margin-left:2px;margin-right:2px;background-color:#eaeaea;">
+                <label>FREQUENCY</label>
+                <select ng-change="updateFrequency(watchdata)" ng-model="watchdata.frequency" style="width:150px;border-radius:4px;padding:4px;" class="form-control">
+                    <option value="5000">5 seconds</option>
+                    <option value="10000">10 seconds</option>
+                    <option value="30000">30 seconds</option>
+                    <option value="60000">1 Minutes</option>
+                    <option value="120000">2 Minutes</option>
+                    <option value="300000">5 Minutes</option>
+                    <option value="900000">15 Minutes</option>
+                    <option value="1800000">30 Minutes</option>
+                    <option value="3600000">1 hour</option>
+                    <option value="28800000">8 hours</option>
+                    <option value="86400000">24 hours</option>
+                </select>
+            </div>
+
+            <div style="float:right;text-align:center;width:60px;margin-left:15px;margin-right:15px;">
+                <img src="images/loading.gif" style="width:60px;" ng-show="watchdata.loading" title="Reloading"/>
+                <img ng-click="rescan(watchdata)" style="width:60px;cursor:pointer;" ng-show="!watchdata.loading" src="images/reload.png" ng-show="watchdata.loading" title="Reload"/>
+            </div>
+
+        </li>
+
+	</ul>
+
+    <hr ng-if="folderService.current_file"/>
+
+    <div ng-if="folderService.current_file">
+        <div class="area_title">Processing now : </div>
+        <div class="current_file" xxtooltips title="Width: {{folderService.current_file.stream_info.stream_width}}<br>Height: {{folderService.current_file.stream_info.stream_height}}<br>Codec: {{folderService.current_file.stream_info.stream_codec}}">
+            <div ng-if="progress_completed != undefined" style="position:relative;display:inline-block;vertical-align:middle;">
+                <div class="progress-percent">{{(progress_completed * 100).toFixed(1)}}%</div>
+                <progress-arc size="60" stroke="#00ff00" stroke-width="30" complete="progress_completed" background="#a0a0a0"></progress-arc>
+            </div>
+            <span style="display:inline-block;">{{folderService.current_file.path}}</span>
+        </div>
+    </div>
+
+    <div ng-class="{'hidden': (folderService.hasWatching === false || folderService.hasWatching === undefined) }" ng-cloak>
+        <hr/>
+        <div class="area_title">Files to Process: {{folderService.files_to_process.length}}</div>
+        <select id="files_to_process" multiple class="form-control">
+            <option ng-repeat="filedata in folderService.files_to_process" ng-if="!filedata.processing && !filedata.processed">
+                ({{filedata.priority}}) {{filedata.path}}
+            </option>
+        </select>
+    </div>
+
+</div>

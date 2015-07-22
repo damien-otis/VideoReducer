@@ -1,0 +1,25 @@
+{
+  "name": "ddProject",
+  "version": "0.0.1",
+  "authors": [],
+  "license": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "content/bower_libs"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "angularjs": "~1.2.26",
+    "bootstrap": "~3.2.0",
+    "angular-ui-router": "~0.2.10",
+    "angular-ui-utils": "~0.0.4",
+    "flexbox.less": "~0.0.4",
+    "ngDialog": "~0.2.11",
+    "pretty-bytes": "~1.0.2",
+    "sweetalert": "~0.3.3",
+    "angular-tooltips": "~0.1.4",
+    "bootstrap-bower": "~3.0.0",
+    "angular-progress-arc": "~0.5.0"
+  }
+}

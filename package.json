@@ -1,0 +1,33 @@
+{
+  "name": "VideoReducer",
+  "version": "0.1.0",
+  "description": "Watch a folder and automatically reduce the size of video files.",
+  "main": "VideoReducer.html",
+  "author": "Damien Otis",
+  "license": "ISC",
+  "single-instance": true,
+  "dom_storage_quota": 50,
+  "dependencies": {
+    "diskspace": "^0.1.7"
+  },
+  "window": {
+    "title": "VideoReducer",
+    "width": 1024,
+    "height": 768,
+    "toolbar": true,
+    "icon": "(string) path to window's icon",
+    "position": "center",
+    "min_width": 220,
+    "min_height": 240,
+    "max_width": 99999,
+    "max_height": 9999,
+    "as_desktop": false,
+    "resizable": true,
+    "always-on-top": false,
+    "fullscreen": false,
+    "show_in_taskbar": true,
+    "frame": true,
+    "show": true,
+    "kiosk": false
+  }
+}
