@@ -9,3 +9,5 @@ VideoReducer is built with Node-webkit, which is a fusion of NodeJS and the Chro
 The interface is HTML/Javascript with AngularJS, jQuery, Bootstrap, and other common libraries. 
 
 NodeJS runs the FFMPEG processes as well as watching folders and dealing with local filesystem access.
+
+![alt tag](http://damieno.com/github/images/videoreducer/image1.jpg)
