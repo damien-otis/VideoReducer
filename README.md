@@ -11,4 +11,4 @@ The interface is HTML/Javascript with AngularJS, jQuery, Bootstrap, and other co
 NodeJS runs the FFMPEG processes as well as watching folders and dealing with local filesystem access.
 
 (NEED A BETTER SCREENCAPTURE, THIS DOESN'T SHOW MUCH)
-![alt tag](http://dmtmix.com/imghit/getImage.asp?img=video_reducer1.jpg)
+![alt tag](http://dmtmix.com/dnetapi/getImage/video_reducer1.jpg)
